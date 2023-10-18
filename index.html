@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Задачки</title>
+    <style>
+.container {
+  perspective: 1000px;
+  width: 400px;
+  height: 350px;
+  position: relative;
+  margin-left: 50px;
+  border: 1px solid black;
+  margin-top: 20px;
+  display: inline-block;
+}
+.container1 {
+  perspective: 1000px;
+  width: 400px;
+  height: 350px;
+  position: relative;
+  margin-left: 50px;
+  border: 1px solid black;
+  margin-top: 20px;
+  display: inline-block;
+}
+.container2 {
+  perspective: 1000px;
+  width: 400px;
+  height: 350px;
+  position: relative;
+  margin-left: 50px;
+  border: 1px solid black;
+  margin-top: 20px;
+  display: inline-block;
+}
+.container3 {
+  perspective: 1000px;
+  width: 400px;
+  height: 350px;
+  position: relative;
+  margin-left: 50px;
+  border: 1px solid black;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.block {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+.block1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+.block2{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+.block3 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.front, .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+.front1, .back1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+.front2, .back2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+.front3, .back3 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.front {
+  background-color: white;
+  transform: rotateY(0deg);
+}
+.front1 {
+  background-color: white;
+  transform: rotateY(0deg);
+}
+.front1 {
+  background-color: white;
+  transform: rotateY(0deg);
+}
+.front2 {
+  background-color: white;
+  transform: rotateY(0deg);
+}
+.back {
+  background-color: white;
+  transform: rotateY(180deg);
+}
+.back1 {
+  background-color: white;
+  transform: rotateY(180deg);
+}
+.back2 {
+  background-color: white;
+  transform: rotateY(180deg);
+}
+.back3 {
+  background-color: white;
+  transform: rotateY(180deg);
+}
+
+    </style>
+</head>
+<body bgcolor="#d7e5f4">
+    <h1 style="font-family:Arial, Helvetica, sans-serif; margin-left: 120px; font-size: 50px;"> Js Задачики</h1>
+    <hr style="margin-left: 50px; margin-right: 50px;">
+    <h2 style="font-family:Arial, Helvetica, sans-serif; margin-left: 120px;">Базовый синтаксис JavaScript</h2>
+    <ul>
+        <li style = "margin-left: 120px;">
+            <p style="font-family:Arial, Helvetica, sans-serif;">
+                Идентификаторы и зарезервированные слова    
+            </p>
+        </li>
+        <li style = "margin-left: 120px;">
+            <p style="font-family:Arial, Helvetica, sans-serif;">
+                Выражении и операторы   
+            </p>
+        </li>
+        <li style = "margin-left: 120px;">
+            <p style="font-family:Arial, Helvetica, sans-serif;">
+                Условные конструкции    
+            </p>
+        </li>
+    </ul>
+
+    <div class="container">
+        <div class="block">
+          <div class="front"><p style="padding-left: 12px;">Напишите функцию, которая принимает 2 числа и возвращает 1, если первое число больше, чем второе; -1, если первое число меньше, чем второе, и 0, если числа равны.(Нажмите, чтобы посмотреть ответ)
+        </p></div>
+          <div class="back"><p style="padding-left: 12px;">
+            function compareNumbers(num1, num2) {
+                if (num1 > num2) {
+                  return 1;
+                } else if (num1 < num2) {
+                  return -1;
+                } else {
+                  return 0;
+                }
+              }
+        </p></div>
+        </div>
+      </div>
+      
+      <div class="container">
+        <div class="block">
+          <div class="front"><p style="padding-left: 12px;">
+            Напишите функцию, которая принимает цвет фона, цвет текста, строку с
+            текстом и выводит методом write()абзац с соответствующими стилями. Например,
+            функция myParagraph("red", "white", "Lorem ipsum sit amet")выведет абзац с
+            текстом "Lorem ipsum sit amet" белого цвета на красном фоне.
+            
+        </p></div>
+          <div class="back">
+            function myParagraph(backgroundColor, textColor, text) {
+                var paragraph = document.createElement('p');
+                paragraph.style.backgroundColor = backgroundColor;
+                paragraph.style.color = textColor;
+                paragraph.textContent = text;
+                document.body.appendChild(paragraph);
+              }
+            <p style="padding-left: 12px;">
+        
+        </p></div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="block">
+          <div class="front"><p style="padding-left: 12px;">
+            Напишите функцию, которая принимает 2 параметра: длину и ширину
+            прямоугольника и вычисляет его площадь. Если в функцию передали 1 параметр, то
+            функция вычисляет площадь квадрата.
+            
+        </p></div>
+          <div class="back"><p style="padding-left: 12px;">
+            function calculateArea(length, width) {
+                if (width === undefined) {
+                  return length * length;
+                } else {
+                  return length * width;
+                }
+              }
+        </p></div>
+        </div>
+      </div>
+      
+
+
+      <div class="container">
+        <div class="block">
+          <div class="front"><p style="padding-left: 12px;">
+            Написать функцию, получающую на вход два числа. Если оба числа чётные -
+            функция возвращает их произведение. Если оба числа нечётные - функция возвращает
+            их сумму. Если одно из чисел чётное, а второе нечётное - функция возвращает это
+            нечётное число.
+        </p></div>
+          <div class="back"><p style="padding-left: 12px;">
+            function processNumbers(num1, num2) {
+                if (num1 % 2 === 0 && num2 % 2 === 0) {
+                  return num1 * num2; 
+                } else if (num1 % 2 !== 0 && num2 % 2 !== 0) {
+                  return num1 + num2; 
+                } else {
+                  return num1 % 2 !== 0 ? num1 : num2;
+                }
+              }
+          </p></div>
+        </div>
+      </div>
+
+
+      <h3 id="myText" style="margin-left: 50px; margin-top: 50px; user-select: none; font-size: 20px; display: inline-block; margin-top: 0px;cursor: pointer;">
+        Первое задание
+      </h3>
+      <h3 id="myTextt" style="margin-left: 50px; margin-top: 50px; user-select: none; font-size: 20px; display: inline-block; cursor: pointer;">
+        Второе задание
+      </h3>
+      <h3 id="myRectangle" style="margin-left: 50px; margin-top: 50px; user-select: none; font-size: 20px; display: inline-block;cursor: pointer;">
+        Третье задание
+      </h3>
+      <h3 id="myButton" style="margin-left: 50px; margin-top: 50px; user-select: none; font-size: 20px; display: inline-block;cursor: pointer;">
+        Четвертое задание
+      </h3>
+      
+      <script>
+        const blocks = document.querySelectorAll(".block");
+      
+        blocks.forEach((block) => {
+          block.addEventListener("click", () => {
+            block.style.transform =
+              block.style.transform === "rotateY(0deg)"
+                ? "rotateY(180deg)"
+                : "rotateY(0deg)";
+          });
+        });
+
+
+function compareNumbers() {
+  const number1 = parseFloat(prompt("Введите первое число:"));
+  const number2 = parseFloat(prompt("Введите второе число:"));
+  if (number1 > number2) {
+    return 1;
+  } else if (number1 < number2) {
+    return -1;
+  } else {
+    return 0;
+  }
+}
+const myText = document.getElementById("myText");
+
+myText.addEventListener("click", function() {
+  const result = compareNumbers();
+  console.log("Результат сравнения: " + result);
+});
+
+
+
+function createStyledParagraph() {
+  const backgroundColor = prompt("Введите цвет фона (например, 'red', '#00FF00', 'rgb(255, 0, 0)'):");
+  const textColor = prompt("Введите цвет текста (например, 'white', '#000000', 'rgb(255, 255, 255)'):");
+  const text = prompt("Введите текст для абзаца:");
+
+  const paragraph = document.createElement("p");
+  paragraph.textContent = text;
+  paragraph.style.backgroundColor = backgroundColor;
+  paragraph.style.color = textColor;
+
+  document.body.appendChild(paragraph);
+}
+const textElement = document.getElementById("myTextt");
+
+textElement.addEventListener("click", function () {
+  createStyledParagraph();
+});
+
+
+
+
+
+document.getElementById("myRectangle").addEventListener("click", function () {
+const length = prompt("Введите длину:");
+const width = prompt("Введите ширину (или оставьте пустым для квадрата):");
+const area = width ? parseFloat(length) * parseFloat(width) : Math.pow(parseFloat(length), 2);
+alert(`Площадь: ${area}`);});
+
+
+
+
+// Функция для обработки чисел в соответствии с правилами
+function processNumbers(num1, num2) {
+  if (num1 % 2 === 0 && num2 % 2 === 0) {
+    return num1 * num2;
+  } else if (num1 % 2 !== 0 && num2 % 2 !== 0) {
+    return num1 + num2;
+  } else {
+    return num1 % 2 !== 0 ? num1 : num2;
+  }
+}
+
+
+function handleClick() {
+  const input1 = prompt("Введите первое число:");
+  const input2 = prompt("Введите второе число:");
+  const num1 = parseFloat(input1);
+  const num2 = parseFloat(input2);
+
+  if (!isNaN(num1) && !isNaN(num2)) {
+    const result = processNumbers(num1, num2);
+    alert("Результат: " + result);
+  } else {
+    alert("Пожалуйста, введите корректные числа.");
+  }
+}
+
+const button = document.getElementById("myButton");
+
+button.addEventListener("click", handleClick);
+
+    </script>  
+</body>
+</html>
